@@ -81,6 +81,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
     fields = ['text']
     template_name = 'core/create_post.html'
+    success_url = '/'
 
     def form_valid(self, form):
         form.instance.user_name = self.request.user
